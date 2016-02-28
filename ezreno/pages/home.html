@@ -31,55 +31,56 @@
 	</div>
 </div>
 
-<script>
-	jQuery(window).ready(function() {
-		var slideAnimation = function() {
-			jQuery('.slider-caption').finish().delay(2000).animate({'opacity': '0'},1000, function() {
-				jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
-				jQuery('.slider-caption').finish().animate({'opacity': '1'},1000);
-			});
-			jQuery('.slider > div').last().hide();
-			jQuery('.slider').append(jQuery('.slider > div').first().css({'opacity': 1, 'position': 'static'}));
-			jQuery('.slider > div').first().show().css({'opacity': 0, 'position': 'absolute', 'z-index': 2});
-			jQuery('.slider > div').first().delay(2000).animate({'opacity': '1'},2000, function() {
-				setTimeout(slideAnimation, 0);
-			});
-		};
-		jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
-		slideAnimation();
-		var windowheight = jQuery(window).height()-100;
-		jQuery('.slider').css({height: windowheight, width: '100%', padding: 0});
-		jQuery('.slider > div').css({height: windowheight, width: '100%', padding: 0});
-		jQuery('.slider-caption').css({position: 'absolute', top: jQuery('.slider').position().top+jQuery('.slider').height()-124, right: 20, 'z-index': 4});
-		jQuery('.fullwindow').css({height: windowheight, width: '100%', padding: 0, display: 'table', 'z-index': 3, position: 'absolute', top: jQuery('.slider').position().top});
-		jQuery('.fullwindow-content').css({height: windowheight, width: '100%', padding: 0, display: 'table-cell', 'vertical-align': 'middle'});
-	});
-</script>
-
+<div style="display: none;">
+	<script>
+		jQuery(window).ready(function() {
+			var slideAnimation = function() {
+				jQuery('.slider-caption').finish().delay(2000).animate({'opacity': '0'},1000, function() {
+					jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
+					jQuery('.slider-caption').finish().animate({'opacity': '1'},1000);
+				});
+				jQuery('.slider > div').last().hide();
+				jQuery('.slider').append(jQuery('.slider > div').first().css({'opacity': 1, 'position': 'static'}));
+				jQuery('.slider > div').first().show().css({'opacity': 0, 'position': 'absolute', 'z-index': 2});
+				jQuery('.slider > div').first().delay(2000).animate({'opacity': '1'},2000, function() {
+					setTimeout(slideAnimation, 0);
+				});
+			};
+			jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
+			slideAnimation();
+			var windowheight = jQuery(window).height()-100;
+			jQuery('.slider').css({height: windowheight, width: '100%', padding: 0});
+			jQuery('.slider > div').css({height: windowheight, width: '100%', padding: 0});
+			jQuery('.slider-caption').css({position: 'absolute', top: jQuery('.slider').position().top+jQuery('.slider').height()-124, right: 20, 'z-index': 4});
+			jQuery('.fullwindow').css({height: windowheight, width: '100%', padding: 0, display: 'table', 'z-index': 3, position: 'absolute', top: jQuery('.slider').position().top});
+			jQuery('.fullwindow-content').css({height: windowheight, width: '100%', padding: 0, display: 'table-cell', 'vertical-align': 'middle'});
+		});
+	</script>
+</div>
 
 
 <div class="resp-divs" style="background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/bg-living-room.jpg'); padding-top: 50px; padding-bottom: 50px; background-size: cover; background-position: center center; background-repeat: no-repeat;">
 
 	<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px;">
-		<h1 style="text-align: center; font-size: 48px;">THE EZ WAY</h1>
+		<h1 style="text-align: center; font-size: 48px; color: #d48e29;">THE EZ WAY</h1>
 		<div style="width: 25%; float: left; text-align: center;">
 			<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-book.png">
-			<h5 style="font-size: 32px;">Book</h5>
+			<h5 style="font-size: 32px; color: #d48e29;">Book</h5>
 			Submit your info to EZ-Reno using our online form
 		</div>
 		<div style="width: 25%; float: left; text-align: center;">
 			<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-confirm.png">
-			<h5 style="font-size: 32px;">Confirm</h5>
+			<h5 style="font-size: 32px; color: #d48e29;">Confirm</h5>
 			We call you to confirm your project details and your EZ Reno pro
 		</div>
 		<div style="width: 25%; float: left; text-align: center;">
 			<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-pay.png">
-			<h5 style="font-size: 32px;">Pay Securely</h5>
+			<h5 style="font-size: 32px; color: #d48e29;">Pay Securely</h5>
 			After your project is completed successfully you can pay online
 		</div>
 		<div style="width: 25%; float: left; text-align: center;">
 			<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-nocontract.png">
-			<h5 style="font-size: 32px;">The Best Pros</h5>
+			<h5 style="font-size: 32px; color: #d48e29;">The Best Pros</h5>
 			We only match you with trusted and experienced pros
 		</div>
 
@@ -91,27 +92,27 @@
 <div class="resp-divs" style="background-color: #fff; padding-top: 50px; padding-bottom: 50px;">
 
 	<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px;">
-		<h1 style="text-align: center; font-size: 48px;">EZ DOES IT</h1>
+		<h1 style="text-align: center; font-size: 48px; color: #d48e29;">EZ DOES IT</h1>
 
 		<div class="resp-divs">
 			<div style="width: 25%; float: left; text-align: center;">
 				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-home.png">
-				<h3 style="font-size: 32px;">Homes</h3>
+				<h3 style="font-size: 32px; color: #d48e29;">Homes</h3>
 				Kick your feet up while we work
 			</div>
 			<div style="width: 25%; float: left; text-align: center;">
 				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-landlord.png">
-				<h3 style="font-size: 32px;">Properties</h3>
+				<h3 style="font-size: 32px; color: #d48e29;">Properties</h3>
 				Coordinate multiple repairs and projects
 			</div>
 			<div style="width: 25%; float: left; text-align: center;">
 				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-office.png">
-				<h3 style="font-size: 32px;">Businesses</h3>
+				<h3 style="font-size: 32px; color: #d48e29;">Businesses</h3>
 				Maintain or upgrade your office spaces
 			</div>
 			<div style="width: 25%; float: left; text-align: center;">
 				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-condo.png">
-				<h3 style="font-size: 32px;">Condos</h3>
+				<h3 style="font-size: 32px; color: #d48e29;">Condos</h3>
 				One click and we handle the rest
 			</div>
 			<div style="clear: both;"></div>
@@ -178,9 +179,7 @@
 
 	<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px;">
 		<div style="text-align: center;">
-			<div style="background-color: #9e1d20; text-align: center; margin-bottom: 50px; border-radius: 100px; padding-left: 100px; padding-right: 100px; white-space: nowrap; display: inline-block;">
-				<a href="http://ez-reno.com/?page_id=59" style="color: #fff; font-size: 32px;">VIEW ALL SERVICES</a>
-			</div>
+			<a href="http://ez-reno.com/?page_id=59" id="view-all-services" style="background-color: #9e1d20; text-align: center; margin-bottom: 50px; border-radius: 100px; padding-left: 100px; padding-right: 100px; white-space: nowrap; display: inline-block;"><span style="color: #fff; font-size: 32px;">VIEW ALL SERVICES</span></a>
 		</div>
 	</div>
 

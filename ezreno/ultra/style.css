@@ -4730,7 +4730,14 @@ End - Custom CSS
   background-color: #9e1d20 !important;
 }
 @media (max-width: 600px) {
-  .book-service-btn {
+  #view-all-services {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #custom-footer .book-service-btn {
     text-align: center;
     width: 100%;
   }
