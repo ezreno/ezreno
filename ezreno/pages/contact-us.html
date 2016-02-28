@@ -1,0 +1,66 @@
+			</div>
+		</main>
+	</div>
+</div>
+
+<div style="background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/carpentry.jpg'); padding-top: 50px; padding-bottom: 50px; background-size: cover; background-position: center center; background-repeat: no-repeat; margin-top: -80px; margin-bottom: -80px;">
+
+
+	<h1 style="text-align: center; color: #fff;">Contact Us</h1>
+	<div style="text-align: center; color: #fff;">
+		<input class="contact-name" type="text" style="width: 350px; margin-bottom: 20px;" placeholder="Name">
+		<input class="contact-email" type="text" style="width: 350px; margin-bottom: 20px;" placeholder="Email Address">
+		<textarea class="contact-message" type="text" style="width: 350px; height: 125px; margin-bottom: 20px;" placeholder="Message"></textarea>
+		<button class="send-message-btn" style="width: 350px; margin-bottom: 20px; background-color: #9e1d20">Send Message</button>
+	</div>
+	<div style="text-align: center; color: #fff;">
+		<a href="mailto:info@ez-reno.com">info@ez-reno.com</a>
+	</div>
+	<div style="text-align: center; color: #fff;">
+		416-219-6569
+	</div>
+</div>
+<script>
+	jQuery(window).ready(function() {
+		jQuery('.datepicker').datepicker();
+		jQuery('.send-message-btn').click(function() {
+			if (!jQuery('.contact-name').val()) {
+				alert('Please enter your name.');
+			} else if (!jQuery('.contact-email').val()) {
+				alert('Please enter your email.');
+			} else if (!jQuery('.contact-message').val()) {
+				alert('Please enter your message.');
+			} else {
+				jQuery.ajax({
+					method: "POST",
+					url: "http://ez-reno.com/wp-content/themes/ultra/mail.php",
+					data: {
+						name: jQuery('.contact-name').val(),
+						email: jQuery('.contact-email').val(),
+						message: jQuery('.contact-message').val(),
+						type: 'contact_us'
+					}
+				}).success(function(result) {
+					if (result == 'success') {
+						alert('Your message was successfully received.');
+					} else {
+						alert('There was an error submitting your message. Please try again later or send email to info@ez-reno.com.');
+					}
+				}).error(function() {
+					alert('There was an error submitting your message. Please try again later or send email to info@ez-reno.com.');
+				});
+			}
+		});
+	});
+</script>
+
+<style>
+	.site-counter {
+		display: inline !important;
+	}
+</style>
+
+<div class="container">
+	<div id="primary2" class="content-area">
+		<main id="main2" class="site-main" role="main">
+			<div class="entry-content">

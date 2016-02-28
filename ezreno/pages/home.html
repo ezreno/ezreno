@@ -1,0 +1,244 @@
+			</div>
+		</main>
+	</div>
+</div>
+
+
+<div class="slider-caption" style="color: #fff; font-family: 'Arial Narrow',Helvetica,sans-serif;"></div>
+<div class="slider" style="width: 100%; height: auto; margin-top: -75px;">
+	<div data-text="EZ Reno Kitchen Project" style="display: inline-block; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/bg-kitchen.jpg'); background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+	</div>
+	<div data-text="EZ Reno Bathroom Project" style="display: none; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/bg-bathroom.jpg'); background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+	</div>
+	<div data-text="EZ Reno Exterior Project" style="display: none; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/bg-exterior.jpg'); background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+	</div>
+</div>
+
+<div class="fullwindow" style="padding-top: 200px; padding-bottom: 200px; margin-top: -75px; text-align: center;">
+	<div class="fullwindow-content">
+		<h1 style="text-align: center; color: #fff; font-size: 48px; line-height: 55px;">Getting Your <span style="color: #d48e29">To-Do List</span> Done <br>Has Never Been This <span style="color: #d48e29">EZ!</span></h1>
+		<select class="service-select" style="padding: 15px; font-size: 24px; margin-right: 10px;">
+			<option value="">-Select Service-</option>
+			<option value="electrical">Electrical</option>
+			<option value="plumbing">Plumbing</option>
+			<option value="carpentry">Carpentry</option>
+			<option value="painting">Painting</option>
+			<option value="office">Office</option>
+			<option value="bathroom">Bathroom Reno</option>
+			<option value="kitchen">Kitchen Reno</option>
+			<option value="exterior">Exterior Services</option>
+		</select> <button class="book-service-btn" style="background-color: #d48e29; font-size: 24px;" onclick="window.location='http://ez-reno.com/?page_id=120&service='+jQuery('.service-select').val();">Book Service</button>
+	</div>
+</div>
+
+<script>
+	jQuery(window).ready(function() {
+		var slideAnimation = function() {
+			jQuery('.slider-caption').finish().delay(2000).animate({'opacity': '0'},1000, function() {
+				jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
+				jQuery('.slider-caption').finish().animate({'opacity': '1'},1000);
+			});
+			jQuery('.slider > div').last().hide();
+			jQuery('.slider').append(jQuery('.slider > div').first().css({'opacity': 1, 'position': 'static'}));
+			jQuery('.slider > div').first().show().css({'opacity': 0, 'position': 'absolute', 'z-index': 2});
+			jQuery('.slider > div').first().delay(2000).animate({'opacity': '1'},2000, function() {
+				setTimeout(slideAnimation, 0);
+			});
+		};
+		jQuery('.slider-caption').text(jQuery('.slider > div').first().data('text'));
+		slideAnimation();
+		var windowheight = jQuery(window).height()-100;
+		jQuery('.slider').css({height: windowheight, width: '100%', padding: 0});
+		jQuery('.slider > div').css({height: windowheight, width: '100%', padding: 0});
+		jQuery('.slider-caption').css({position: 'absolute', top: jQuery('.slider').position().top+jQuery('.slider').height()-124, right: 20, 'z-index': 4});
+		jQuery('.fullwindow').css({height: windowheight, width: '100%', padding: 0, display: 'table', 'z-index': 3, position: 'absolute', top: jQuery('.slider').position().top});
+		jQuery('.fullwindow-content').css({height: windowheight, width: '100%', padding: 0, display: 'table-cell', 'vertical-align': 'middle'});
+	});
+</script>
+
+
+
+<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px; margin-top: -25px; background-color: #eee;">
+
+
+	<h1 style="text-align: center; font-size: 32px;">The EZ Way</h1>
+	<div style="width: 25%; float: left; text-align: center;">
+		<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-book.png">
+		<h5>Book</h5>
+		Simply choose a date and time of day that fits your schedule
+	</div>
+	<div style="width: 25%; float: left; text-align: center;">
+		<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-confirm.png">
+		<h5>Confirm</h5>
+		We assign a pro and email you his/her details and expected time of arrival
+	</div>
+	<div style="width: 25%; float: left; text-align: center;">
+		<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-pay.png">
+		<h5>Pay Securely Online</h5>
+		After job is completed, you let us know you are satisfied and we will send a detailed invoice and link to pay securely online. Nothing less than the best
+	</div>
+	<div style="width: 25%; float: left; text-align: center;">
+		<img src="http://ez-reno.com/wp-content/themes/ultra/icons/ez-nocontract.png">
+		<h5>No Contracts No Upsells</h5>
+		We are familiar with the red tape, let us get it done for you!
+	</div>
+
+
+	<div style="clear: both;"></div>
+</div>
+
+
+<!--
+<div class="slider" style="width: 100%; height: auto;">
+	<div style="display: inline-block; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/slide_01.jpg'); padding-top: 300px; padding-bottom: 100px; background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+		<div style="background-color: rgba(0,0,0,0.8); color: #d48e29; font-size: 24px; font-weight: 700;">
+			<span class="slider-text" style="padding-left: 0; padding-right: 100px; opacity: 0;">1. Book Service</span>
+		</div>
+	</div>
+	<div style="display: none; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/slide_02.jpg'); padding-top: 300px; padding-bottom: 100px; background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+		<div style="background-color: rgba(0,0,0,0.8); color: #d48e29; font-size: 24px; font-weight: 700;">
+			<span class="slider-text" style="padding-left: 0; padding-right: 100px; opacity: 0;">2. Confirm Schedule</span>
+		</div>
+	</div>
+	<div style="display: none; width: 100%; background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/slide_03.jpg'); padding-top: 300px; padding-bottom: 100px; background-size: cover; text-align: center; background-position: center center; background-repeat: no-repeat;">
+		<div style="background-color: rgba(0,0,0,0.8); color: #d48e29; font-size: 24px; font-weight: 700;">
+			<span class="slider-text" style="padding-left: 0; padding-right: 100px; opacity: 0;">3. Pay Easy and Securely</span>
+		</div>
+	</div>
+</div>
+<script>
+	jQuery(window).ready(function() {
+		var slideAnimation = function() {
+			jQuery('.slider > div').first().find('.slider-text').animate({'padding-left': 50, 'padding-right': 50, 'opacity': 1},2000, function() {
+				jQuery('.slider > div').last().hide();
+				jQuery('.slider').append(jQuery('.slider > div').first().css({'opacity': 1, 'position': 'static'}));
+				jQuery('.slider > div').first().show().css({'opacity': 0, 'position': 'absolute', 'z-index': 20});
+				jQuery('.slider > div').first().delay(2000).animate({'opacity': '1'},2000, function() {
+					jQuery('.slider-text').css({'padding-left': 0, 'padding-right': 100, 'opacity': 0});
+					setTimeout(slideAnimation, 0);
+				});
+			});
+		};
+		slideAnimation();
+	});
+</script>
+-->
+
+
+<div class="container">
+	<div id="primary2" class="content-area">
+		<main id="main2" class="site-main" role="main">
+			<div class="entry-content">
+
+
+				<h1 style="text-align: center; font-size: 32px;">How Can We Help?</h1>
+
+				<div class="resp-divs">
+					<div style="width: 25%; float: left; text-align: center;">
+						<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-home.png">
+						<h3>For Your Home</h3>
+						Give us your to-do list
+					</div>
+					<div style="width: 25%; float: left; text-align: center;">
+						<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-landlord.png">
+						<h3>Landlords</h3>
+						We take the hassle out of managing your properties
+					</div>
+					<div style="width: 25%; float: left; text-align: center;">
+						<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-office.png">
+						<h3>For Your Office</h3>
+						On demand maintenance that guarantees a pleasant and safe working environment
+					</div>
+					<div style="width: 25%; float: left; text-align: center;">
+						<img src="http://ez-reno.com/wp-content/themes/ultra/icons/services-condo.png">
+						<h3>Condo Owners</h3>
+						We are familiar with the red tape, let us get it done for you!
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+
+			</div>
+		</main>
+	</div>
+</div>
+
+<div class="resp-divs" style="background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/carpentry.jpg'); padding-top: 50px; padding-bottom: 50px; margin-top: 80px; background-size: cover; background-position: center center; background-repeat: no-repeat;">
+
+
+	<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px;">
+
+		<h1 style="text-align: center; font-size: 32px; color: #fff;">Primary</h1>
+
+		<div style="width: 20%; float: left; text-align: center;">
+			<a href="http://ez-reno.com/?page_id=120&service=electrical"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-electrical.png"></a>
+			<h3 style="color: #fff;">Electrical</h3>
+		</div>
+		<div style="width: 20%; float: left; text-align: center;">
+			<a href="http://ez-reno.com/?page_id=120&service=painting"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-plumbing.png"></a>
+			<h3 style="color: #fff;">Plumbing</h3>
+		</div>
+		<div style="width: 20%; float: left; text-align: center;">
+			<a href="http://ez-reno.com/?page_id=120&service=painting"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-painting.png"></a>
+			<h3 style="color: #fff;">Painting</h3>
+		</div>
+		<div style="width: 20%; float: left; text-align: center;">
+			<a href="http://ez-reno.com/?page_id=120&service=office"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-office.png"></a>
+			<h3 style="color: #fff;">Office</h3>
+		</div>
+		<div style="width: 20%; float: left; text-align: center;">
+			<a href="http://ez-reno.com/?page_id=120&service=carpentry"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-carpentry.png"></a>
+			<h3 style="color: #fff;">Carpentry</h3>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+
+</div>
+
+
+<div class="container">
+	<div id="primary2" class="content-area">
+		<main id="main2" class="site-main" role="main">
+			<div class="entry-content">
+
+
+				<div class="resp-divs" style="padding-top: 50px; padding-bottom: 50px;">
+
+					<h1 style="text-align: center; font-size: 32px;">Specialty</h1>
+
+					<div style="width: 33%; float: left; text-align: center;">
+						<a href="http://ez-reno.com/?page_id=120&service=bathroom"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-bathroom.png"></a>
+						<h3>Bathroom Reno</h3>
+					</div>
+					<div style="width: 33%; float: left; text-align: center;">
+						<a href="http://ez-reno.com/?page_id=120&service=kitchen"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-kitchen.png"></a>
+						<h3>Kitchen Reno</h3>
+					</div>
+					<div style="width: 33%; float: left; text-align: center;">
+						<a href="http://ez-reno.com/?page_id=120&service=exterior"><img src="http://ez-reno.com/wp-content/themes/ultra/icons/icon-exterior.png"></a>
+						<h3>Exterior Services</h3>
+					</div>
+
+					<div style="clear: both;"></div>
+				</div>
+
+				<div style="background-color: #9e1d20; text-align: center; margin-bottom: 50px;">
+					<a href="http://ez-reno.com/?page_id=59" style="color: #fff;">View All Services</a>
+				</div>
+
+
+			</div>
+		</main>
+	</div>
+</div>
+
+
+
+<!-- <div class="resp-divs" style="background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/toronto.jpg'); padding-top: 50px; padding-bottom: 50px; margin-bottom: -80px; background-size: cover; background-position: center center; background-repeat: no-repeat;">
+
+</div> -->
+
+
+<div class="container">
+	<div id="primary2" class="content-area">
+		<main id="main2" class="site-main" role="main">
+			<div class="entry-content">
