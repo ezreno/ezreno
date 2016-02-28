@@ -4729,3 +4729,13 @@ End - Custom CSS
 .book-service-btn:hover {
   background-color: #9e1d20 !important;
 }
+@media (max-width: 600px) {
+  .book-service-btn {
+    text-align: center;
+    width: 100%;
+  }
+  #custom-footer {
+    height: 260px !important;
+    padding-left: 0 !important;
+  }
+}

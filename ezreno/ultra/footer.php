@@ -14,7 +14,7 @@
 
 	</div><!-- #content -->
 
-	<div style="text-align: left; background-color: #000; height: 180px; padding-left: 40px; position: relative;">
+	<div id="custom-footer" style="text-align: left; background-color: #000; height: 180px; padding-left: 40px; position: relative;">
 		<div style="max-width: 1150px; margin: auto;">
 			<div style="padding-top: 24px; text-align: center;">
 				<div style="width: 33.3333%; text-align: center; float: left;">
