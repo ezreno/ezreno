@@ -1,0 +1,113 @@
+			</div>
+		</main>
+	</div>
+</div>
+
+<div style="background: url('http://ez-reno.com/wp-content/themes/ultra/backgrounds/carpentry.jpg'); padding-top: 50px; padding-bottom: 50px; background-size: cover; background-position: center center; background-repeat: no-repeat; margin-top: -80px; margin-bottom: -80px;">
+
+
+	<h1 style="text-align: center; color: #fff;">Book Service</h1>
+	<div style="text-align: center; color: #fff;">
+		<div>*All fields are required.</div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your name:</div>
+		<div><input class="service-name" type="text" style="width: 350px; margin-bottom: 10px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="John Smith"></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your email:</div>
+		<div><input class="service-email" type="text" style="width: 350px; margin-bottom: 10px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="user@domain.com"></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your phone number:</div>
+		<div><input class="service-phone" type="text" style="width: 350px; margin-bottom: 10px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="647-555-5555"></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your address:</div>
+		<div><input class="service-address" type="text" style="width: 350px; margin-bottom: 10px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="1234 Main Street"></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your requested service:</div>
+		<div><select class="service-select" style="width: 350px; padding: 15px; font-size: 24px; margin-bottom: 10px; background-color: #333; color: #ddd; border-color: #333;">
+			<option value="">-Select Service-</option>
+			<option value="electrical">Electrical</option>
+			<option value="plumbing">Plumbing</option>
+			<option value="carpentry">Carpentry</option>
+			<option value="painting">Painting</option>
+			<option value="office">Office</option>
+			<option value="bathroom">Bathroom Reno</option>
+			<option value="kitchen">Kitchen Reno</option>
+			<option value="exterior">Exterior Services</option>
+		</select></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Describe your request:</div>
+		<div><textarea class="service-details" type="text" style="width: 350px; height: 125px; margin-bottom: 15px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="Enter job details here"></textarea></div>
+		<div style="display: inline-block; width:350px; text-align: left; padding-left: 15px; box-size: border-box;">Your preferred date of arrival:</div>
+		<div><input class="service-date datepicker" type="text" style="width: 350px; margin-bottom: 20px; border-radius: 20px; background-color: #333; color: #ddd; border-color: #333;" placeholder="Preferred Date of Arrival"></div>
+		<button class="request-service-btn" style="width: 350px; margin-bottom: 20px; background-color: #9e1d20; border-radius: 20px;">Submit</button>
+	</div>
+	<div>
+		<table style="margin: auto; width: auto; border: none;" cellspacing="0" cellpadding="0"><tr style="width: auto; border: none;">
+			<td style="width: auto; border: none;">
+				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/neighbour-approved.png" width="100">
+			</td>
+			<td style="width: auto; border: none; text-align: left; color: #fff;">
+				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/hammer.png" width="20"> Safe & secure payment
+				<img src="http://ez-reno.com/wp-content/themes/ultra/icons/hammer.png" width="20"> We do not sell or share your information
+			</td>
+		</tr></table>
+	</div>
+</div>
+<script>
+	jQuery(window).ready(function() {
+		// Read a page's GET URL variables and return them as an associative array.
+		var getUrlVars = function () {
+			var vars = [], hash;
+			var querystring = window.location.href.slice(window.location.href.indexOf('?') + 1);
+			var hashes = querystring.split(String.fromCharCode(38));
+			for (var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		var $_GET = getUrlVars();
+		jQuery('.service-select').val($_GET['service']);
+		jQuery('.datepicker').datepicker();
+		jQuery('.request-service-btn').click(function() {
+			if (!jQuery('.service-name').val()) {
+				alert('Please enter your name.');
+			} else if (!jQuery('.service-email').val()) {
+				alert('Please enter your email.');
+			} else if (!jQuery('.service-phone').val()) {
+				alert('Please enter your phone.');
+			} else if (!jQuery('.service-address').val()) {
+				alert('Please enter your address.');
+			} else if (!jQuery('.service-select').val()) {
+				alert('Please select your service.');
+			} else if (!jQuery('.service-details').val()) {
+				alert('Please enter service details.');
+			} else if (!jQuery('.service-date').val()) {
+				alert('Please select your preferred service date.');
+			} else {
+				jQuery.ajax({
+					method: "POST",
+					url: "http://ez-reno.com/wp-content/themes/ultra/mail.php",
+					data: {
+						name: jQuery('.service-name').val(),
+						email: jQuery('.service-email').val(),
+						phone: jQuery('.service-phone').val(),
+						address: jQuery('.service-address').val(),
+						service: jQuery('.service-select').val(),
+						details: jQuery('.service-details').val(),
+						date: jQuery('.service-date').val(),
+						type: 'book_service'
+					}
+				}).success(function(result) {
+					if (result == 'success') {
+						alert('Your request was successfully received.');
+					} else {
+						alert('There was an error submitting your request. Please try again later or send email to info@ez-reno.com.');
+					}
+				}).error(function() {
+					alert('There was an error submitting your request. Please try again later or send email to info@ez-reno.com.');
+				});
+			}
+		});
+	});
+</script>
+
+<div class="container">
+	<div id="primary2" class="content-area">
+		<main id="main2" class="site-main" role="main">
+			<div class="entry-content">
